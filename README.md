@@ -7,13 +7,13 @@ from numpy import mean, std
 import matplotlib.pyplot as plt
 
 #explore number of features 
-#get a list of models to evaluate
-def get_models():
-    models= dict()
-     # explore number of features from 1 to 20
-    for i in range (1,21):
-        models[str(i)]= RandomForestClassifier(max_features=i, random_state=42, class_weight='balanced')
-    return models
+# get a list of models to evaluate
+        def get_models():
+            models= dict()
+             # explore number of features from 1 to 20
+            for i in range (1,21):
+                models[str(i)]= RandomForestClassifier(max_features=i, random_state=42, class_weight='balanced')
+            return models
 
 # evaluate a given model using cross-validation
 def evaluate_model (model, X, y):
