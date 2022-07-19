@@ -7,6 +7,7 @@
         import matplotlib.pyplot as plt
 
 #explore number of features 
+
 #get a list of models to evaluate
 
         def get_models():
@@ -17,6 +18,7 @@
             return models
 
 #evaluate a given model using cross-validation
+
         def evaluate_model (model, X, y):
             # define the evaluation procedure
             cv= RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
@@ -25,8 +27,11 @@
             return scores
 
 #get the models to evaluate
+
         models= get_models()
+        
 #evaluate the models and store results
+
         results, names =list(), list()
         for name, model in models.items():
             # evaluate the model
@@ -36,7 +41,9 @@
             names.append(name)
              # summarize the performance along the way
             print('>%s %.3f (%.3f)' % (name, mean(scores), std(scores)))
+            
 #plot model performance for comparison
+
         plt.boxplot(results, labels=names, showmeans=True)
         plt.show()
 
