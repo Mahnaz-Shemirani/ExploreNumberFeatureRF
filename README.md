@@ -16,26 +16,26 @@ import matplotlib.pyplot as plt
             return models
 
 # evaluate a given model using cross-validation
-def evaluate_model (model, X, y):
-    # define the evaluation procedure
-    cv= RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
-    # evaluate the model and collect the results
-    scores=cross_val_score(model, X, y, cv=cv, n_jobs=-1, scoring='accuracy')
-    return scores
+        def evaluate_model (model, X, y):
+            # define the evaluation procedure
+            cv= RepeatedStratifiedKFold(n_splits=10, n_repeats=3, random_state=1)
+            # evaluate the model and collect the results
+            scores=cross_val_score(model, X, y, cv=cv, n_jobs=-1, scoring='accuracy')
+            return scores
 
 # get the models to evaluate
-models= get_models()
+        models= get_models()
 # evaluate the models and store results
-results, names =list(), list()
-for name, model in models.items():
-    # evaluate the model
-    scores= evaluate_model(model, X, y)
-    # store the results
-    results.append(scores)
-    names.append(name)
-     # summarize the performance along the way
-    print('>%s %.3f (%.3f)' % (name, mean(scores), std(scores)))
+        results, names =list(), list()
+        for name, model in models.items():
+            # evaluate the model
+            scores= evaluate_model(model, X, y)
+            # store the results
+            results.append(scores)
+            names.append(name)
+             # summarize the performance along the way
+            print('>%s %.3f (%.3f)' % (name, mean(scores), std(scores)))
 # plot model performance for comparison
-plt.boxplot(results, labels=names, showmeans=True)
-plt.show()
+        plt.boxplot(results, labels=names, showmeans=True)
+        plt.show()
 
