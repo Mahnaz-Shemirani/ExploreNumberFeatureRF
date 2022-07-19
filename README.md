@@ -1,4 +1,4 @@
-# ExploreNumberFeatureRF
+# Explore Number of Feature in Random Forest
 #import packages from library
 
 from sklearn.ensemble import RandomForestClassifier
@@ -7,7 +7,7 @@ from numpy import mean, std
 import matplotlib.pyplot as plt
 
 #explore number of features 
-# get a list of models to evaluate
+#get a list of models to evaluate
 def get_models():
     models= dict()
      # explore number of features from 1 to 20
