@@ -1,4 +1,4 @@
-# Explore Number of Feature in Random Forest
+# Explore Number of Feature in Random Forest, Python, Jupyter notebook 
 #import packages from library
 
         from sklearn.ensemble import RandomForestClassifier
